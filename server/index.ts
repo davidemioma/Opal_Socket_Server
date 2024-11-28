@@ -62,7 +62,10 @@ io.on("connection", (socket) => {
 
     fs.readFile(`temp-upload/${data.fileName}`, async (err, file) => {
       const processing = await axios.post(
-        `${process.env.NEXT_API_HOST}/recordings/${data.userId}/processing`
+        `${process.env.NEXT_API_HOST}/recordings/${data.userId}/processing`,
+        {
+          fileName: data.fileName,
+        }
       );
 
       if (processing.data.status !== 200) {
