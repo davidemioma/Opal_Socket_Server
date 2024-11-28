@@ -66,9 +66,7 @@ io.on("connection", (socket) => {
       );
 
       if (processing.data.status !== 200) {
-        console.log(
-          `Something went wrong with processing file, ${processing.data.error}`
-        );
+        console.log(`Something went wrong with processing file`);
 
         return;
       }
@@ -147,9 +145,7 @@ io.on("connection", (socket) => {
           );
 
           if (titleAndSummaryGenerated.data.status !== 200) {
-            console.log(
-              `Error: Something went wrong saving to the database, ${titleAndSummaryGenerated.data.error}`
-            );
+            console.log(`Error: Something went wrong saving to the database`);
           }
         });
       }
@@ -164,7 +160,7 @@ io.on("connection", (socket) => {
 
       if (stopProcessing.data.status !== 200) {
         console.log(
-          `Error: Something went wrong stopping process in the web API, ${stopProcessing.data.error}`
+          `Error: Something went wrong stopping process in the web API`
         );
       }
 
