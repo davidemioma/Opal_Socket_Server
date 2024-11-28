@@ -178,7 +178,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", async () => {
-    console.log("Socket disconnected");
+    console.log("Socket disconnected!");
   });
 });
 
